@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 <?php $rand_products = $db->query('SELECT * FROM products ORDER BY rating DESC LIMIT 2')->fetchAll(); ?>
 
 <div class="row">
 
+=======
+<?php
+
+$random_products = $db->query('SELECT * FROM products ORDER BY RAND() LIMIT 2')->fetchAll();
+
+?>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
             <div class="col-md-3">
 
                 <p class="lead">Categories</p>
@@ -14,6 +22,7 @@
                 </div>
 
                 <p class="lead">Featured products</p>
+<<<<<<< HEAD
                                    
                                     <?php foreach ($rand_products as $key => $product) { ?>
 
@@ -49,3 +58,13 @@
 
             </div><!-- /.col-md-3 -->
             <div class="col-md-9">
+=======
+
+                <?php
+                foreach($random_products as $product) {
+                    echo displayProduct($product);
+                }
+                ?>
+
+            </div><!-- /.col-md-3 -->
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac

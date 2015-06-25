@@ -1,9 +1,29 @@
+<<<<<<< HEAD
    <?php include_once 'header.php';
     
     $search = !empty($_GET['search']) ? $_GET['search'] : '';
 
     ?>
 
+=======
+<?php
+include_once 'header.php';
+
+$search = !empty($_GET['q']) ? $_GET['q'] : '';
+
+$count_results = 0;
+$search_results = array();
+
+if (!empty($search)) {
+    $query = $db->prepare('SELECT * FROM products WHERE name LIKE :search OR description LIKE :search');
+    $query->bindValue('search', '%'.$search.'%', PDO::PARAM_STR);
+    $query->execute();
+    $search_results = $query->fetchAll();
+    $count_results = $query->rowCount();
+}
+
+?>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
 
         <div class="row">
             <div class="col-lg-12">
@@ -38,6 +58,7 @@
                         </button>
                     </div>
                 </form>
+<<<<<<< HEAD
     <?php
     if (!empty($search)) {
 
@@ -47,13 +68,19 @@
         $search_results = $query->fetchAll();
         $count_results = $query->rowCount();
    } ?>
+=======
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
 
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->
 
         <div class="row">
             <div class="col-lg-12">
+<<<<<<< HEAD
                 <h1 class="page-header"></h1>
+=======
+                <h1 class="page-header"><?= $count_results ?> search results</h1>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->
 
@@ -91,6 +118,7 @@
         <div class="row">
             <div class="col-lg-12">
 
+<<<<<<< HEAD
                 <div class="product col-lg-3 col-md-4 col-xs-6 thumb">
                     <div class="thumbnail">
                         <img src="http://placehold.it/320x150" alt="">
@@ -194,10 +222,21 @@
                         </div>
                     </div><!-- /.thumbnail -->
                 </div><!-- /.product -->
+=======
+                <?php
+                foreach($search_results as $product) {
+                    echo displayProduct($product, 'product col-lg-3 col-md-4 col-xs-6 thumb');
+                }
+                ?>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
 
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->
 
+<<<<<<< HEAD
     </div><!-- /.container -->
 
    <?php include_once 'footer.php' ?>
+=======
+<?php include_once 'footer.php' ?>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac

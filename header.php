@@ -1,6 +1,7 @@
-<?php include_once 'Inc/db.php';
- include_once 'Inc/func.php';
- ?>
+<?php
+require_once 'inc/db.php';
+require_once 'inc/func.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-slider.css" rel="stylesheet">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/shop.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,40 +30,8 @@
 </head>
 
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Shop</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="page.php">About</a></li>
-                    <li><a href="page.php">Services</a></li>
-                    <li><a href="search.php">Search</a></li>
-                    <li><a href="form.php">Contact</a></li>
-                    <li><a href="form.php">Register</a></li>
-                </ul>
-
-                <form class="navbar-form navbar-right" role="search" action="search.php" method="GET">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><span class=" glyphicon glyphicon-search"></span></button>
-                        </span>
-                    </div>
-                </form>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-    </nav>
+    
+    <?php include_once 'navbar.php' ?>
 
     <!-- Page Content -->
     <div class="container">

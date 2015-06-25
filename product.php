@@ -1,12 +1,22 @@
+<<<<<<< HEAD
 <?php include_once 'header.php';
 
 if (!isset($_GET['id'])) {
     exit('Undefined param id');
+=======
+<?php
+include_once 'header.php';
+
+if (empty($_GET['id'])) {
+    header('Location: index.php');
+    exit();
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
 }
 
 $id = intval($_GET['id']);
 
 $query = $db->prepare('SELECT * FROM products WHERE id = :id');
+<<<<<<< HEAD
 $query->bindValue(':id', $id, PDO::PARAM_INT);
 $query->execute();
 $product = $query->fetch();
@@ -108,11 +118,23 @@ $product = $query->fetch();
                 </div><!-- /.product -->
 
             </div><!-- /.col-md-3 -->
+=======
+$query->bindValue('id', $id, PDO::PARAM_INT);
+$query->execute();
+$full_product = $query->fetch();
+
+?>
+
+        <div class="row">
+
+            <?php include 'sidebar-product.php' ?>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
 
             <div class="col-md-9">
 
                 <div class="product-full">
                     <div class="thumbnail">
+<<<<<<< HEAD
                         <img class="img-responsive" src="img/product/product4.jpg" alt="">
                         <div class="caption-full">
                             <h4 class="pull-right"><?= $product['price'] ?></h4>
@@ -141,6 +163,16 @@ $product = $query->fetch();
                                 <span class="glyphicon glyphicon-star-empty"></span>
                                 4.0 stars
                             </p>
+=======
+                        <img class="img-responsive" src="<?= getProductPicture($full_product['picture']) ?>" alt="">
+                        <div class="caption-full">
+                            <h4 class="pull-right"><?= $full_product['price'] ?> €</h4>
+                            <h4><?= $full_product['name'] ?></h4>
+                            <?= nl2br($full_product['description']) ?>
+                        </div>
+                        <div class="ratings">
+                            <?= getProductRating($full_product['rating']) ?>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
                         </div>
                         <div class="btns text-center clearfix">
                             <a class="btn btn-success" href=""><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
@@ -205,6 +237,10 @@ $product = $query->fetch();
 
         </div><!-- /.row -->
 
+<<<<<<< HEAD
     </div><!-- /.container -->
 
    <?php include 'footer.php' ?>
+=======
+<?php include_once 'footer.php' ?>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac

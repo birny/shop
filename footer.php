@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 <div class="container">
+=======
+    </div><!-- /.container -->
+
+    <div class="container">
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
 
         <!-- Footer -->
         <footer>
@@ -85,7 +91,11 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col-lg-6">Copyright © Shop <?= date('Y') ?> All right reserved.</div>
+=======
+                        <div class="col-lg-6">Copyright © Shop <?= date('Y') ?>. All right reserved.</div>
+>>>>>>> dac3df1668e72fa28db142677cb31d923055eaac
                         <div class="col-lg-6">
                             <div class="pull-right">
                                 <ul class="nav nav-pills payments">
